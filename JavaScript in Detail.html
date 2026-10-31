@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <input id="divIn" placeholder="Divide 100 by this
+try a number or type something silly!">
+<button onclick="trySafe()">Try It!</button>
+<p id="errResult"></p>
+<script>
+var age = 20;
+document.write(typeof age, "<br>")
+age1=String(age)
+document.write(typeof age1, "<br>")
+var x = Number("22")
+document.write(typeof x, "<br>")
+var sentence = "the dragon flew over the big castle"
+document.write(sentence.search("flew"),"<br>")
+var s = sentence.replace ("dragon","knight")
+document.write(s)
+function trySafe() {
+try {
+var n = document.getElementById("divIn").value;
+if (isNaN(n)) {
+throw "That is not a number -you caught the error!";}
+document.getElementById("errResult").innerHTML = "100 / " + n + " = " + (100 / Number(n)) + " — well done!";
+
+
+}
+catch(err) {
+    document.getElementById("errResult").innerHTML="errorGot"+err
+}
+}
+
+</script>
+    </body>
+</html>
